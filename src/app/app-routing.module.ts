@@ -7,6 +7,7 @@ import { FillingComponent } from './filling/filling.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { WorkComponent } from './work/work.component';
 import { WritingComponent } from './writing/writing.component';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path: 'Work', component: WorkComponent},
   {path: 'Writing', component: WritingComponent},
   {path: 'Contact', component: ContactComponent},
-
+  {path: 'Knowledge', component: KnowledgeComponent},
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ import { WorkComponent } from './work/work.component';
 import { WritingComponent } from './writing/writing.component';
 import { ContactComponent } from './contact/contact.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { KnowledgeComponent } from './knowledge/knowledge.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InicioComponent } from './inicio/inicio.component';
     WorkComponent,
     WritingComponent,
     ContactComponent,
-    InicioComponent
+    InicioComponent,
+    KnowledgeComponent
   ],
   imports: [
     BrowserModule,
