@@ -1,42 +1,32 @@
 <div class="area">
     <ul class="circles" style="--main-color : rgb(31, 12, 235);">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
     <app-navbar style="--active: 'linkContact'"></app-navbar>
-    <div class="fill">
-        <h1>Talk to me -></h1>
-        <div class="card">
-            <a target="_blank" href="mailto:tototastico@gmail.com">
-                <img src="assets/mail.svg" alt="Mail logo">
+    <div class="fill contact-container">
+        <h1>Let's Connect</h1>
+        <div class="contact-grid">
+            <a [href]="item.link" target="_blank" class="contact-card glass-panel"
+                *ngFor="let item of contactItems$ | async">
+                <div class="contact-icon">
+                    <!-- Placeholder or dynamic icon logic could go here, strictly using text/name for now as per simple data model -->
+                    <span class="icon-text">{{ item.name | slice:0:2 }}</span>
+                </div>
+                <div class="contact-info">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.text }}</p>
+                </div>
+                <div class="arrow">→</div>
             </a>
         </div>
-
-        <div class="card">
-            <a target="_blank" href="https://api.whatsapp.com/send?phone=541121809844&text=Hello%20man,%20I%20have%20read%20your%20portfolio%20and%20i%20want%20to%chat%20with%20you.">
-                <img src="assets/whatsapp.svg" alt="Whatsapp logo">
-            </a>
-        </div>
-
-        <div class="card">
-            <a target="_blank" href="https://linkedin.com/in/tobias-sirne">
-                <img src="assets/linkedin.svg" alt="LinkedIn logo" width="35px" height="35px">
-            </a>
-        </div>
-
-        <div class="card">
-            <a target="_blank" href="https://github.com/Tototastico">
-                <img src="assets/github.svg" alt="Github logo">
-            </a>
-        </div>
-
     </div>
 </div>

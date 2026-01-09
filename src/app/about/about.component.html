@@ -1,31 +1,25 @@
-
 <div class="area">
     <ul class="circles" style="--main-color : rgb(235, 12, 224);">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
     <app-navbar style="--active: 'linkAbout'"></app-navbar>
-    <div class="fill">
-        <h2>My name is Tobias Sirne.</h2>
-        <p>I'm 19 years old<br>
-            I'm a Data Scientist<br>
-           </p>
-        <p>
-            With experience using SQL, Python and PowerBI for data analysis.<br>
-            I have worked on data cleaning, data visualization,<br>
-            and predictive modeling projects using Scikit or Tensorflow.
-        </p>
-        <p>I have experience working on a Tech Startup<br>
-           as a Machine Learning dev, and Data Engineering.<br>
-        </p>
-        <a class="contact-link" routerLink="/Contact" style="color:rgb(31, 12, 235)">Contact ></a>
+    <div class="fill" *ngIf="aboutData$ | async as data">
+        <h2>{{ data.title }}</h2>
+        <p class="intro">{{ data.intro }}</p>
+
+        <div class="bio-pars">
+            <p *ngFor="let paragraph of data.bio">{{ paragraph }}</p>
+        </div>
+
+        <a class="contact-link" routerLink="/Contact">Contact ></a>
     </div>
 </div>

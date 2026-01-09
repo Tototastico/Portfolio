@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService, ContactItem } from '../services/portfolio.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  contactItems$: Observable<ContactItem[]>;
+
+  constructor(private portfolioService: PortfolioService) {
+    this.contactItems$ = this.portfolioService.contact$;
+  }
 
   ngOnInit(): void {
   }

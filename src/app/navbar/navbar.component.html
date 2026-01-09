@@ -1,12 +1,13 @@
 <div class="navbar">
     <div class="card">
         <div class="links">
-            <a routerLink="/"  class=" linkHome linq">Home</a>
-            <a routerLink="/About"  class="  linkAbout linq">About</a>
-            <a routerLink="/Work"  class="linkWork linq">Work</a>
-            <a routerLink="/Writing"  class="linkWriting linq">Projects</a>
-            <a routerLink="/Knowledge"  class="linkKnowledge linq">Knowledge</a>
+            <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"
+                class="linkHome linq">Home</a>
+            <a routerLink="/About" routerLinkActive="active-link" class="linkAbout linq">About</a>
+            <a routerLink="/Work" routerLinkActive="active-link" class="linkWork linq">Work</a>
+            <a routerLink="/Writing" routerLinkActive="active-link" class="linkWriting linq">Projects</a>
+            <a routerLink="/Knowledge" routerLinkActive="active-link" class="linkKnowledge linq">Knowledge</a>
         </div>
-        <a routerLink="/Contact"  class=" linkContact linq">Contact</a>
+        <a routerLink="/Contact" routerLinkActive="active-link" class="linkContact linq">Contact</a>
     </div>
 </div>

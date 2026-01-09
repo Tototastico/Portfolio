@@ -1,0 +1,8 @@
+<div class="login-container">
+    <div class="login-card">
+        <h2>Admin Login</h2>
+        <input type="password" [(ngModel)]="password" placeholder="Password (admin123)" (keyup.enter)="login()">
+        <button (click)="login()">Login</button>
+        <p class="error" *ngIf="error">{{ error }}</p>
+    </div>
+</div>

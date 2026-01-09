@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService, WorkItem } from '../services/portfolio.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-work',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkComponent implements OnInit {
 
-  constructor() { }
+  workItems$: Observable<WorkItem[]>;
+
+  constructor(private portfolioService: PortfolioService) {
+    this.workItems$ = this.portfolioService.work$;
+  }
 
   ngOnInit(): void {
   }

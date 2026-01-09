@@ -12,13 +12,14 @@
             <li></li>
     </ul>
     <app-navbar style="--active: 'linkWork'"></app-navbar>
-    <div class="work-card">
-        <h1 class="work-title">Go up cloud</h1>
-        <a class="work-img-container col-100" target="_blank" href="https://www.goup.cloud/project/procesamiento-con-analisis-cognitivo-para-datos-clinicos-en-azure/">
-            <img class="work-img col-50" src="assets/infraestructura.png" alt="">
-            <img class="work-img col-50" src="assets/azure-health.png" alt="">
-        </a>
-        <p>Internship at Go Up Cloud in Chile, as a data engineering  <br>
-            experience in challenging projects, and professional growth. </p>
+    <div class="work-container">
+        <div class="work-card" *ngFor="let item of workItems$ | async">
+            <h1 class="work-title">{{ item.title }}</h1>
+            <a class="work-img-container col-100" target="_blank" [href]="item.link">
+                <!-- Assuming 2 images max for now based on previous code, or loop images -->
+                <img *ngFor="let img of item.images" class="work-img col-50" [src]="img" alt="">
+            </a>
+            <p>{{ item.description }}</p>
+        </div>
     </div>
 </div>

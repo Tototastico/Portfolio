@@ -12,6 +12,9 @@ import { WritingComponent } from './writing/writing.component';
 import { ContactComponent } from './contact/contact.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { KnowledgeComponent } from './knowledge/knowledge.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { KnowledgeComponent } from './knowledge/knowledge.component';
     WritingComponent,
     ContactComponent,
     InicioComponent,
-    KnowledgeComponent
+    KnowledgeComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

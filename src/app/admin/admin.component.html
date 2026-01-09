@@ -1,0 +1,88 @@
+<div class="admin-container">
+    <div class="admin-header">
+        <h1>Admin Panel</h1>
+        <button (click)="logout()">Logout</button>
+    </div>
+    <!-- Home Section -->
+    <div class="section">
+        <h2>Edit Home</h2>
+        <div class="add-form">
+            <input type="text" [(ngModel)]="homeData.subtitle" placeholder="Subtitle (e.g. Hi, I'm...)">
+            <input type="text" [(ngModel)]="homeData.title" placeholder="Title (e.g. Data Analyst)">
+            <textarea [(ngModel)]="homeData.description" rows="4" placeholder="Description"></textarea>
+            <button class="add-btn" (click)="saveHome()">Save Home Changes</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section">
+        <h2>Edit About</h2>
+        <div class="add-form">
+            <input type="text" [(ngModel)]="aboutData.title" placeholder="Title">
+            <input type="text" [(ngModel)]="aboutData.intro" placeholder="Intro Text">
+            <textarea [(ngModel)]="aboutBioText" rows="6"
+                placeholder="Bio Paragraphs (Separate with double enter)"></textarea>
+            <button class="add-btn" (click)="saveAbout()">Save About Changes</button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+        <h2>Manage Contacts</h2>
+        <div class="add-form">
+            <input type="text" [(ngModel)]="newContact.name" placeholder="Name (e.g. LinkedIn)">
+            <input type="text" [(ngModel)]="newContact.link" placeholder="Link URL">
+            <input type="text" [(ngModel)]="newContact.text" placeholder="Display Text">
+            <button class="add-btn" (click)="addContact()">Add Contact</button>
+        </div>
+        <div class="list">
+            <div class="item" *ngFor="let item of contactItems">
+                <span>{{ item.name }} - {{ item.text }}</span>
+                <button class="delete-btn" (click)="deleteContact(item.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Manage Work</h2>
+
+        <div class="add-form">
+            <input type="text" [(ngModel)]="newWork.title" placeholder="Title">
+            <input type="text" [(ngModel)]="newWork.link" placeholder="Link URL">
+            <input type="text" [(ngModel)]="newWork.description" placeholder="Description">
+            <div class="image-input">
+                <input type="text" [(ngModel)]="newWorkImage" placeholder="Image URL (assets/...)">
+                <button (click)="addWorkImage()">Add Image</button>
+            </div>
+            <div class="preview-images">
+                <span *ngFor="let img of newWork.images">{{img}}</span>
+            </div>
+            <button class="add-btn" (click)="addWork()">Add Work Item</button>
+        </div>
+
+        <div class="list">
+            <div class="item" *ngFor="let item of workItems">
+                <span>{{ item.title }}</span>
+                <button class="delete-btn" (click)="deleteWork(item.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Knowledge Management -->
+    <div class="section">
+        <h2>Manage Knowledge</h2>
+
+        <div class="add-form">
+            <input type="text" [(ngModel)]="newKnowledge.name" placeholder="Name">
+            <input type="text" [(ngModel)]="newKnowledge.image" placeholder="Image URL (assets/...)">
+            <button class="add-btn" (click)="addKnowledge()">Add Knowledge Item</button>
+        </div>
+
+        <div class="list">
+            <div class="item" *ngFor="let item of knowledgeItems">
+                <span>{{ item.name }}</span>
+                <img [src]="item.image" style="width: 30px; margin-left:10px;">
+                <button class="delete-btn" (click)="deleteKnowledge(item.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

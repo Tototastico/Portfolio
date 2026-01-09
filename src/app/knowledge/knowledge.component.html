@@ -1,90 +1,28 @@
 <div class="area">
     <ul class="circles" style="--main-color : rgb(255, 4, 3);">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
     <app-navbar style="--active: 'linkContact'"></app-navbar>
-        <div class="fill">
-            <div class="row">
-                <div class="column">
-                    <figure>
-                        <img src="assets/python.png" alt="">
-                        <div class="capa"><h2>Python</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/azure.png" alt="">
-                        <div class="capa"><h2>Azure</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/mongodb.png" alt="">
-                        <div class="capa"><h2>MongoDB</h2></div>
-                    </figure>             
-                </div>
-                <div class="column">
-                    <figure>
-                        <img src="assets/sql.png" alt="">
-                        <div class="capa"><h2>SQL</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/docker.png" alt="">
-                        <div class="capa"><h2>Docker</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/nosql.png" alt="">
-                        <div class="capa"><h2>NoSQL</h2></div>
-                    </figure>           
-                </div>
-                <div class="column">
-                    <figure>
-                        <img src="assets/powerbi.png" alt="">
-                        <div class="capa"><h2>PowerBI</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/numpy.png" alt="">
-                        <div class="capa"><h2>Numpy</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/tensorflow.png" alt="">
-                        <div class="capa"><h2>Tensorflow</h2></div>
-                    </figure>          
-                </div>
-                <div class="column">
-                    <figure>
-                        <img src="assets/tableau.png" alt="">
-                        <div class="capa"><h2>Tableau</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/git.png" alt="">
-                        <div class="capa"><h2>Git</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/scikit-learn.png" alt="">
-                        <div class="capa"><h2>Scikit</h2></div>
-                    </figure>      
-                </div>
-                <div class="column">
-                    <figure>
-                        <img src="assets/mysql.png" alt="">
-                        <div class="capa"><h2>MySQL</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/pandas.png" alt="">
-                        <div class="capa"><h2>Pandas</h2></div>
-                    </figure>
-                    <figure>
-                        <img src="assets/airflow.png" alt="">
-                        <div class="capa"><h2>AirFlow</h2></div>
-                    </figure>
-                </div>
+    <div class="fill">
+        <div class="row knowledge-grid">
+            <div class="column" *ngFor="let item of knowledgeItems$ | async">
+                <figure>
+                    <img [src]="item.image" [alt]="item.name">
+                    <div class="capa">
+                        <h2>{{ item.name }}</h2>
+                    </div>
+                </figure>
             </div>
-            Software icons by <a target="_blank" href="https://icons8.com">Icons8</a>
         </div>
+        Software icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
 </div>
